@@ -1,0 +1,156 @@
+﻿<UserControl x:Class="WPFOnlineStore.UserControls.UC_ProductItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFOnlineStore.UserControls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             Height="300" 
+             Width="150"
+             Margin="5"
+             MaxHeight="300"
+             MaxWidth="150" 
+             materialDesign:ShadowAssist.ShadowDepth="Depth5"
+             Background="{DynamicResource MaterialDesignPaper}"
+             Cursor="Hand">
+
+    <materialDesign:Card>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+
+                    <TextBlock
+                Grid.Column="1"
+                Foreground="{StaticResource MaterialDesignToolForeground}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Grid.Row="1"
+                Style="{StaticResource MaterialDesignBody2TextBlock}"
+                Text="{Binding ProductItem.Price}"/>
+
+                    <TextBlock
+                Grid.Column="1"
+                Foreground="{StaticResource MaterialDesignToolForeground}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Grid.Row="1"
+                Style="{StaticResource MaterialDesignBody2TextBlock}"
+                Text="$"/>
+
+                </StackPanel>
+
+
+
+                <TextBlock
+                Foreground="{StaticResource MaterialDesignToolForeground}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Grid.Row="1"
+                Style="{StaticResource MaterialDesignBody2TextBlock}"
+                Text="Price:" />
+
+            </Grid>
+
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+
+                    <TextBlock
+                Grid.Column="1"
+                Foreground="{StaticResource MaterialDesignToolForeground}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Grid.Row="1"
+                Style="{StaticResource MaterialDesignBody2TextBlock}"
+                Text="{Binding ProductItem.Count}" />
+
+                    <TextBlock
+                Grid.Column="1"
+                Foreground="{StaticResource MaterialDesignToolForeground}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Grid.Row="1"
+                Style="{StaticResource MaterialDesignBody2TextBlock}"
+                Text=" Left" />
+
+                </StackPanel>
+
+
+                <TextBlock
+                Foreground="{StaticResource MaterialDesignToolForeground}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Grid.Row="1"
+                Style="{StaticResource MaterialDesignBody2TextBlock}"
+                Text="Count:" />
+
+            </Grid>
+
+            <Image
+            Source="{Binding ProductItem.Product.ImageUrl}"
+            Margin="2"
+            Stretch="Uniform"/>
+
+
+
+            <TextBlock
+                Foreground="{StaticResource MaterialDesignToolForeground}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Grid.Row="1"
+                Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                Text="{Binding ProductItem.Product.Name}"/>
+
+
+            <Button
+            Grid.Row="4"
+            Margin="20 0 0 5"
+            HorizontalAlignment="Left"
+            Width="25"
+            Height="25"
+  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+  ToolTip="Add To Basket"
+  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                <materialDesign:PackIcon
+    Kind="Add" />
+            </Button>
+
+            <Button
+            Grid.Row="4"
+            Margin="0 0 20 5 "
+            HorizontalAlignment="Right"
+            Width="25"
+            Height="25"
+  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+  ToolTip="Add To Favorites"
+  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                <materialDesign:PackIcon
+    Kind="Heart" />
+            </Button>
+
+        </Grid>
+    </materialDesign:Card>
+
+
+
+</UserControl>
