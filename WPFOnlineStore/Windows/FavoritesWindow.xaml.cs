@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,26 +17,19 @@ using WPFOnlineStore.Models;
 namespace WPFOnlineStore.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для ProductInfoWindow.xaml
+    /// Логика взаимодействия для FavoritesWindow.xaml
     /// </summary>
-    public partial class ProductInfoWindow : Window
+    public partial class FavoritesWindow : Window
     {
-        public ProductItem ProductItem { get; set; } 
+        public ObservableCollection<ProductItem> Favorites { get; set; }
 
-        public ProductInfoWindow(ProductItem productItem)
+        public FavoritesWindow(ObservableCollection<ProductItem> favorites)
         {
-            ProductItem = productItem;
+            InitializeComponent();
 
             DataContext = this;
 
-            InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            EditProductInfo window=new(ProductItem);
-
-            window.ShowDialog();
+            Favorites = favorites;
         }
     }
 }

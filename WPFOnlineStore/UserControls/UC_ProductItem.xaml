@@ -83,7 +83,7 @@
                 VerticalAlignment="Center"
                 Grid.Row="1"
                 Style="{StaticResource MaterialDesignBody2TextBlock}"
-                Text="{Binding ProductItem.Count}" />
+                Text="{Binding ProductItem.Count, UpdateSourceTrigger=PropertyChanged}" />
 
                     <TextBlock
                 Grid.Column="1"
@@ -124,19 +124,21 @@
 
 
             <Button
-            Grid.Row="4"
-            Margin="20 0 0 5"
-            HorizontalAlignment="Left"
-            Width="25"
-            Height="25"
+                Name="BtnAddToBasket"
+                Grid.Row="4"
+                Margin="20 0 0 5"
+                HorizontalAlignment="Left"
+                Width="25"
+                Height="25"
   Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
   ToolTip="Add To Basket"
-  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Click="BtnAddToBasket_Click">
                 <materialDesign:PackIcon
     Kind="Add" />
             </Button>
 
             <Button
+                Name="BtnAddToFavorites"
             Grid.Row="4"
             Margin="0 0 20 5 "
             HorizontalAlignment="Right"
@@ -144,7 +146,7 @@
             Height="25"
   Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
   ToolTip="Add To Favorites"
-  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Click="BtnAddToFavorites_Click">
                 <materialDesign:PackIcon
     Kind="Heart" />
             </Button>

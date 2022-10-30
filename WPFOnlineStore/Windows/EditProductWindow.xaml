@@ -161,7 +161,8 @@
             HorizontalAlignment="Right"
             Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
             ToolTip="Cancel"
-            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+            Click="ButtonCancel_Click">
             <materialDesign:PackIcon Kind="CancelBold"/>
         </Button>
 

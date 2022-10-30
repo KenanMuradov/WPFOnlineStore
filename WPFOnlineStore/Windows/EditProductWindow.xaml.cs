@@ -65,5 +65,7 @@ namespace WPFOnlineStore.Windows
 
             DialogResult = true;
         }
+
+        private void ButtonCancel_Click(object sender, RoutedEventArgs e) => DialogResult = false;
     }
 }

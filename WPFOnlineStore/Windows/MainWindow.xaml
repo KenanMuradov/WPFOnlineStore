@@ -32,35 +32,31 @@
                 <StackPanel
                     Orientation="Horizontal"
                     materialDesign:RippleAssist.IsCentered="True">
-                    <materialDesign:Badged VerticalAlignment="Center" Badge="3" materialDesign:ButtonAssist.CornerRadius="5">
+                    <materialDesign:Badged VerticalAlignment="Center" Badge="{Binding Basket.Count}" materialDesign:ButtonAssist.CornerRadius="5">
                         <Button
+                            Name="BtnBasket"
                             VerticalAlignment="Center"
                             Style="{StaticResource MaterialDesignPaperSecondaryLightButton}"
-                            materialDesign:ButtonAssist.CornerRadius="5">
+                            materialDesign:ButtonAssist.CornerRadius="5" Click="BtnBasket_Click">
 
                             <Button.ToolTip>See The Basket</Button.ToolTip>
                             <materialDesign:PackIcon Kind="Basket"/>
                         </Button>
                     </materialDesign:Badged>
 
+                    <materialDesign:Badged VerticalAlignment="Center" Badge="{Binding Favorites.Count}" materialDesign:ButtonAssist.CornerRadius="5">
+                        <Button
+                            Margin="16 0 0 0"
+                            Name="BtnFavorites"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource MaterialDesignPaperSecondaryLightButton}"
+                            materialDesign:ButtonAssist.CornerRadius="5" Click="BtnFavorites_Click" >
 
+                            <Button.ToolTip>See The Basket</Button.ToolTip>
+                            <materialDesign:PackIcon Kind="Heart"/>
+                        </Button>
+                    </materialDesign:Badged>
 
-                    <ComboBox
-        SelectedIndex="0"
-        Margin="8 0 0 0"
-        BorderThickness="0"
-        materialDesign:ColorZoneAssist.Mode="Standard"
-        materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource MaterialDesignPaper}"
-        BorderBrush="{DynamicResource MaterialDesignPaper}">
-                        <ComboBoxItem
-          Content="Android" />
-                        <ComboBoxItem
-          Content="iOS" />
-                        <ComboBoxItem
-          Content="Linux" />
-                        <ComboBoxItem
-          Content="Windows" />
-                    </ComboBox>
 
 
 
@@ -70,7 +66,7 @@
         Padding="8 4 8 4"
         CornerRadius="2"
         Panel.ZIndex="1"
-        Margin="16 0 0 0"
+        Margin="16 2 2 2"
         materialDesign:ShadowAssist.ShadowDepth="Depth1">
                         <Grid>
                             <Grid.ColumnDefinitions>

@@ -22,7 +22,6 @@ namespace WPFOnlineStore.Windows
     /// </summary>
     public partial class MainWindow : Window
     {
-        public ObservableCollection<ProductItem> Products { get; set; }
         public ObservableCollection<ProductItem> Basket { get; set; }
         public ObservableCollection<ProductItem> Favorites { get; set; }
 
@@ -30,27 +29,18 @@ namespace WPFOnlineStore.Windows
         {
             InitializeComponent();
 
-            Products = new();
             Basket = new();
             Favorites = new();
 
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
+            DataContext = this;
 
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0),Favorites,Basket));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0),Favorites,Basket));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0),Favorites,Basket));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0),Favorites,Basket));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0),Favorites,Basket));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0),Favorites,Basket));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0),Favorites,Basket));
         }
 
         private void btnAddProduct_Click(object sender, RoutedEventArgs e)
@@ -60,8 +50,22 @@ namespace WPFOnlineStore.Windows
             if (window.ShowDialog() == true)
             {
                 if (window.ProductItem != null)
-                    wpProducts.Children.Insert(0,new UC_ProductItem(window.ProductItem));
+                    wpProducts.Children.Insert(0,new UC_ProductItem(window.ProductItem, Favorites, Basket));
             }
+        }
+
+        private void BtnBasket_Click(object sender, RoutedEventArgs e)
+        {
+            BasketWindow window = new(Basket);
+
+            window.ShowDialog();
+        }
+
+        private void BtnFavorites_Click(object sender, RoutedEventArgs e)
+        {
+            FavoritesWindow window = new(Favorites);
+
+            window.ShowDialog();
         }
     }
 }

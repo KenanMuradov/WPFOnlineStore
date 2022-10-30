@@ -133,6 +133,14 @@
             Style="{StaticResource MaterialDesignHeadline6TextBlock}"
             Text="{Binding ProductItem.Price}"/>
 
+
+            <TextBlock
+            Foreground="{StaticResource MaterialDesignToolForeground}"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+            Text="$"/>
+
         </StackPanel>
 
 
@@ -154,6 +162,13 @@
             Style="{StaticResource MaterialDesignHeadline6TextBlock}"
             Text="{Binding ProductItem.Count}"/>
 
+            <TextBlock
+            Foreground="{StaticResource MaterialDesignToolForeground}"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+            Text=" Left"/>
+
         </StackPanel>
 
         <StackPanel Grid.Row="8" Orientation="Horizontal">
@@ -172,6 +187,13 @@
             Style="{StaticResource MaterialDesignHeadline6TextBlock}"
             Text="{Binding ProductItem.Discount}"/>
 
+            <TextBlock
+            Foreground="{StaticResource MaterialDesignToolForeground}"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+            Text="%"/>
+            
         </StackPanel>
 
 
