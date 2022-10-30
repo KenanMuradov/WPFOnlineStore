@@ -6,12 +6,13 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         xmlns:local="clr-namespace:WPFOnlineStore.Windows"
         mc:Ignorable="d"
-        Title="BasketWindow" 
+        Title="Basket" 
         Height="480" Width="300"
         MaxWidth="350"
         MinHeight="400"
         MinWidth="300"
-        >
+        Icon="/Windows/adfe4339166eb036b196869d5b37ad5a.jpeg"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>

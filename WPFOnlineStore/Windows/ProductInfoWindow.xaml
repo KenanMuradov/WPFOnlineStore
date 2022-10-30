@@ -11,7 +11,9 @@
         Width="400"
         MinWidth="350"
         MinHeight="500"
-        MaxWidth="440">
+        MaxWidth="440"
+        Icon="/Windows/adfe4339166eb036b196869d5b37ad5a.jpeg"
+        WindowStartupLocation="CenterScreen">
     <Grid>
 
         <Grid.RowDefinitions>

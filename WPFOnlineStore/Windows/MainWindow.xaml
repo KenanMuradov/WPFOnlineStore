@@ -8,11 +8,13 @@
         xmlns:usercontrols="clr-namespace:WPFOnlineStore.UserControls"
         xmlns:wpfonlinestore1="clr-namespace:WPFOnlineStore.CustomControls"
         mc:Ignorable="d"
-        Title="KepaOnlineStore" 
+        Title="Kepa Online Store" 
         Height="450" 
         Width="800"
         MinWidth="300"
-        MinHeight="450">
+        MinHeight="450"
+        Icon="/Windows/adfe4339166eb036b196869d5b37ad5a.jpeg"
+        WindowStartupLocation="CenterScreen">
     <Grid>
 
         <Grid.RowDefinitions>

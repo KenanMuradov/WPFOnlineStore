@@ -6,7 +6,11 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         xmlns:local="clr-namespace:WPFOnlineStore.Windows"
         mc:Ignorable="d"
-        Title="Add ProductWi" Height="730" Width="300">
+        Title="Add ProductWi" 
+        Height="730" 
+        Width="300"
+        Icon="/Windows/adfe4339166eb036b196869d5b37ad5a.jpeg"
+        WindowStartupLocation="CenterScreen">
     <Grid Name="MainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
