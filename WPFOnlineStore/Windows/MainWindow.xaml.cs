@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WPFOnlineStore.UserControls;
 using WPFOnlineStore.Models;
+using WPFOnlineStore.FakeRepo;
 
 namespace WPFOnlineStore.Windows
 {
@@ -34,13 +35,8 @@ namespace WPFOnlineStore.Windows
 
             DataContext = this;
 
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0),Favorites,Basket));
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0),Favorites,Basket));
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0),Favorites,Basket));
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0),Favorites,Basket));
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0),Favorites,Basket));
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0),Favorites,Basket));
-            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0),Favorites,Basket));
+            foreach (var p in FakeRepository.ProductItems)
+                wpProducts.Children.Add(new UC_ProductItem(p, Favorites, Basket));
         }
 
         private void btnAddProduct_Click(object sender, RoutedEventArgs e)
@@ -50,7 +46,7 @@ namespace WPFOnlineStore.Windows
             if (window.ShowDialog() == true)
             {
                 if (window.ProductItem != null)
-                    wpProducts.Children.Insert(0,new UC_ProductItem(window.ProductItem, Favorites, Basket));
+                    wpProducts.Children.Insert(0, new UC_ProductItem(window.ProductItem, Favorites, Basket));
             }
         }
 
@@ -66,6 +62,30 @@ namespace WPFOnlineStore.Windows
             FavoritesWindow window = new(Favorites);
 
             window.ShowDialog();
+        }
+
+        private void ButtonSearch_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtSearch.Text))
+            {
+                foreach (var control in wpProducts.Children.OfType<UC_ProductItem>())
+                    control.Visibility = Visibility.Visible;
+
+                return;
+            }
+
+
+            foreach (var control in wpProducts.Children.OfType<UC_ProductItem>())
+            {
+                if (!control.ProductItem.Product.Name!.ToLower().Contains(txtSearch.Text.ToLower()))
+                    control.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+                ButtonSearch_Click(sender, e);
         }
     }
 }

@@ -79,15 +79,16 @@
                             </Grid.ColumnDefinitions>
 
                             <TextBox
+                                Name="txtSearch"
             Margin="8 0 0 0"
             materialDesign:HintAssist.Hint="Search"
             materialDesign:TextFieldAssist.DecorationVisibility="Visible"
             BorderThickness="0"
             MinWidth="200"
-            VerticalAlignment="Center" />
+            VerticalAlignment="Center" KeyDown="txtSearch_KeyDown"/>
                             <Button
             Grid.Column="1"
-            Style="{StaticResource MaterialDesignToolButton}">
+            Style="{StaticResource MaterialDesignToolButton}" Click="ButtonSearch_Click">
                                 <materialDesign:PackIcon
               Kind="Search"
               Opacity=".56" />
