@@ -16,7 +16,7 @@ public class Product
     public string? ImageUrl { get; set; }
 
 
-    public Product(string? name, string? company, string? description, string? country, string? category, string? imageUrl)
+    public Product(string? name, string? company, string? country, string? category, string? imageUrl, string? description="None")
     {
         Name = name;
         Company = company;

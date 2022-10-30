@@ -102,12 +102,13 @@
                 </StackPanel>
 
                 <Button
+                    Name="btnAddProduct"
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     materialDesign:ButtonAssist.CornerRadius="2"
                     HorizontalAlignment="Right"
                     ToolTip="Resource name: MaterialDesignRaisedButton"
                     Content="+Add Product"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Click="btnAddProduct_Click" />
 
 
             </DockPanel>

@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WPFOnlineStore.UserControls;
 using WPFOnlineStore.Models;
 
 namespace WPFOnlineStore.Windows
@@ -33,26 +34,34 @@ namespace WPFOnlineStore.Windows
             Basket = new();
             Favorites = new();
 
-            wpProducts.Children.Add(new UserControls.UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "None", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UserControls.UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "None", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UserControls.UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "None", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UserControls.UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "None", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UserControls.UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "None", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UserControls.UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "None", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UserControls.UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "None", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UserControls.UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "None", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UserControls.UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "None", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UserControls.UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "None", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UserControls.UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "None", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UserControls.UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "None", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UserControls.UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "None", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UserControls.UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "None", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UserControls.UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "None", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
-            wpProducts.Children.Add(new UserControls.UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "None", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
+            wpProducts.Children.Add(new UC_ProductItem(new ProductItem(new Product("Cola", "Coca Cola", "America", "Goods", "https://avatars.mds.yandex.net/i?id=26e3a28b6987baeb1878764b9b11b059-5665039-images-thumbs&n=13"), 20, 31, 0)));
 
         }
 
+        private void btnAddProduct_Click(object sender, RoutedEventArgs e)
+        {
+            AddProductWindow window = new();
 
-
+            if (window.ShowDialog() == true)
+            {
+                if (window.ProductItem != null)
+                    wpProducts.Children.Insert(0,new UC_ProductItem(window.ProductItem));
+            }
+        }
     }
 }

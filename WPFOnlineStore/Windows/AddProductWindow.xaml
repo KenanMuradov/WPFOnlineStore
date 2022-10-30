@@ -1,0 +1,169 @@
+﻿<Window x:Class="WPFOnlineStore.Windows.AddProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        xmlns:local="clr-namespace:WPFOnlineStore.Windows"
+        mc:Ignorable="d"
+        Title="Add ProductWi" Height="730" Width="300">
+    <Grid Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <materialDesign:ColorZone
+            
+            
+            Mode="PrimaryDark" VerticalAlignment="Stretch">
+            <TextBlock 
+                Style="{StaticResource MaterialDesignHeadline5TextBlock}" 
+                Foreground="{StaticResource MaterialDesignPaper}"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">Create Product</TextBlock>
+        </materialDesign:ColorZone>
+
+        <TextBox
+            Padding="0 0 0 5"
+            Margin="0 20 0 5"
+            Grid.Row="1"
+            x:Name="txtProductName"
+            FontSize="20"
+            materialDesign:HintAssist.Hint="Product Name"
+            materialDesign:HintAssist.HelperText="Must Be Filled"
+            materialDesign:HintAssist.HelperTextFontSize="13" />
+
+        <TextBox
+            Padding="0 0 0 5"
+            Margin="0 20 0 5"
+            Grid.Row="2"
+            x:Name="txtProductCompany"
+            FontSize="20"
+            materialDesign:HintAssist.Hint="Comapny Name"
+            materialDesign:HintAssist.HelperText="Must Be Filled"
+            materialDesign:HintAssist.HelperTextFontSize="13" />
+
+        <TextBox
+            Padding="0 0 0 5"
+            Margin="0 20 0 5"
+            Grid.Row="3"
+            x:Name="txtProductCountry"
+            FontSize="20"
+            materialDesign:HintAssist.Hint="Country of Origin"
+            materialDesign:HintAssist.HelperText="Must Be Filled"
+            materialDesign:HintAssist.HelperTextFontSize="13" />
+
+        <TextBox
+            Padding="0 0 0 5"
+            Margin="0 20 0 5"
+            Grid.Row="4"
+            x:Name="txtProductCategory"
+            FontSize="20"
+            materialDesign:HintAssist.Hint="Category"
+            materialDesign:HintAssist.HelperText="Must Be Filled"
+            materialDesign:HintAssist.HelperTextFontSize="13" />
+
+        <TextBox
+            Padding="0 0 0 5"
+            Margin="0 20 0 5"
+            Grid.Row="5"
+            x:Name="txtProductImage"
+            FontSize="20"
+            materialDesign:HintAssist.Hint="Image Address"
+            materialDesign:HintAssist.HelperText="Must Be Filled"
+            materialDesign:HintAssist.HelperTextFontSize="13"/>
+
+
+        <TextBox
+            Padding="0 0 0 5"
+            Margin="0 20 0 5"
+            Grid.Row="6"
+            x:Name="txtProductPrice"
+            FontSize="20"
+            materialDesign:HintAssist.Hint="Price"
+            materialDesign:HintAssist.HelperText="Must Be Filled"
+            materialDesign:HintAssist.HelperTextFontSize="13"/>
+
+        <TextBox
+            Padding="0 0 0 5"
+            Margin="0 20 0 5"
+            Grid.Row="7"
+            x:Name="txtProductCount"
+            FontSize="20"
+            materialDesign:HintAssist.Hint="Count"
+            materialDesign:HintAssist.HelperText="Must Be Filled"
+            materialDesign:HintAssist.HelperTextFontSize="13"/>
+
+
+        <TextBox
+            Padding="0 0 0 5"
+            Margin="0 20 0 5"
+            Grid.Row="8"
+            x:Name="txtProductDiscount"
+            FontSize="20"
+            materialDesign:HintAssist.Hint="Discount"
+            materialDesign:HintAssist.HelperText="Must Be Filled"
+            materialDesign:HintAssist.HelperTextFontSize="13"/>
+
+
+        <Grid Grid.Row="9">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+
+            <TextBlock FontSize="16"
+                Foreground="{StaticResource MaterialDesignToolTipBackground}" 
+                VerticalAlignment="Bottom" 
+                HorizontalAlignment="Center" 
+                Text="Description Part"></TextBlock>
+            
+            <TextBox
+                x:Name="txtDesctiption"
+                FontSize="14"
+                Grid.Row="56"
+                TextWrapping="Wrap"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                AcceptsReturn="True"
+                VerticalScrollBarVisibility="Auto"
+                SpellCheck.IsEnabled="True"
+                materialDesign:HintAssist.Hint="Write The Description"/>
+
+        </Grid>
+
+
+        <Button
+            Grid.Row="10"
+            Margin="40 0 0 0"
+            HorizontalAlignment="Left"
+            Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+            ToolTip="Accept"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" 
+            Click="ButtonAccept_Click">
+            <materialDesign:PackIcon Kind="CheckBold"/>
+        </Button>
+
+        <Button
+            Grid.Row="10"
+            Margin="0 0 40 0"
+            HorizontalAlignment="Right"
+            Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+            ToolTip="Cancel"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+            <materialDesign:PackIcon Kind="CancelBold"/>
+        </Button>
+
+    </Grid>
+</Window>

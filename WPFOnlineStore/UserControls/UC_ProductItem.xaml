@@ -13,7 +13,8 @@
              MaxWidth="150" 
              materialDesign:ShadowAssist.ShadowDepth="Depth5"
              Background="{DynamicResource MaterialDesignPaper}"
-             Cursor="Hand">
+             Cursor="Hand"
+             MouseDoubleClick="UserControl_MouseDoubleClick">
 
     <materialDesign:Card>
         <Grid>
@@ -35,13 +36,13 @@
                 <StackPanel Grid.Column="1" Orientation="Horizontal">
 
                     <TextBlock
-                Grid.Column="1"
-                Foreground="{StaticResource MaterialDesignToolForeground}"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Grid.Row="1"
-                Style="{StaticResource MaterialDesignBody2TextBlock}"
-                Text="{Binding ProductItem.Price}"/>
+                        Grid.Column="1"
+                        Foreground="{StaticResource MaterialDesignToolForeground}"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Grid.Row="1"
+                        Style="{StaticResource MaterialDesignBody2TextBlock}"
+                        Text="{Binding ProductItem.Price}"/>
 
                     <TextBlock
                 Grid.Column="1"
